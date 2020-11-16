@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+@model Movie
+
+<h1>Register</h1>
+
+@Html.ValidationSummary()
+
+<form action="Result" method="POST">
+    ID: <input type="number" name="ID" min="1" max="1000" value="@Model.ID" required /><br /><br />
+    Title: <input type="text" name="Title" value="@Model.Title" placeholder="Title" required/><br /><br />
+    Genre:<p></p>
+    <input type="radio" id="Action" name="Genre" value="Action">
+    <label for="Action">Action</label>
+    <input type="radio" id="Comedy" name="Genre" value="Comedy">
+    <label for="Comedy">Comedy</label>
+    <input type="radio" id="Drama" name="Genre" value="Drama">
+    <label for="Drama">Drama</label>
+    <input type="radio" id="Fantasy" name="Genre" value="Fantasy">
+    <label for="Fantasy">Fantasy</label>
+    <input type="radio" id="Horror" name="Genre" value="Horror">
+    <label for="Horror">Horror</label>
+    <input type="radio" id="Romance" name="Genre" value="Romance">
+    <label for="Romance">Romance</label>
+    <input type="radio" id="other" name="Genre" value="other">
+    <label for="other">Other</label>
+    <br /><br />
+    Year: <input type="number" name="Year" max="2020" min="1880" value="@Model.Year" placeholder="YYYY" required /><br /><br />
+    Actors: <input type="text" name="Actors" placeholder="Actor name" value="@Model.Actors" required />
+            <input type="text" name="Actors" placeholder="Actor name" value="@Model.Actors" required /><br /><br />
+    Director: <input type="text" name="Director" placeholder="Director name" value="@Model.Director" required />
+    <br />
+    <input type="submit" name="sumbit" />
+
+</form>
